@@ -43,10 +43,13 @@ hist(steps.per.day$steps, col = '#ccb3ff', breaks =10, xlab = "Steps per Day", y
 Calculate and report the mean and median total number of steps taken per day
 
 ```{r , echo=TRUE}
-median(steps.per.day$steps)
-
-mean(steps.per.day$steps)
+spd.median<- median(steps.per.day$steps)
+print(spd.median)
+spd.mean<-mean(steps.per.day$steps)
+print(spd.mean)
 ```
+mean = `r format(spd.mean)`
+median = `r format(spd.median)`
 
 ## What is the average daily activity pattern?
 Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) 
@@ -63,7 +66,7 @@ ggplot(daily.pattern, aes(interval, steps)) + geom_line(size = 0.65, color = '#0
 Which 5-minute interval, on average across all the days in the dataset, 
 contains the maximum number of steps?
 
-```{r , echo=TRUE}
+```{r max-interval, echo=TRUE}
 daily.pattern[which.max(daily.pattern$steps),]
 ```
   
@@ -109,10 +112,13 @@ hist(steps.per.day.mean$steps, col = '#ccb3ff', breaks =10, main = "Steps per Da
 Calculate and report the mean and median total number of steps taken per day
 
 ```{r , echo=TRUE}
-median(steps.per.day.mean$steps)
-
-mean(steps.per.day.mean$steps)
+spdm.median<-median(steps.per.day.mean$steps)
+print(spdm.median)
+spdm.mean<-mean(steps.per.day.mean$steps)
+print(spdm.mean)
 ```
+median = `r format(spdm.median)`
+mean =  `r format(spdm.mean)`
 
 Do these values differ from the estimates from the first part of the assignment? 
 The means are the same and the median is very close. They don't differ by much at all.
